@@ -1,0 +1,50 @@
+sandwurm convergence          's best match is convergence of dominion                  with match convergence         
+shock                         's best match is spellshock                               with match shock               
+palace jailer                 's best match is opal palace                              with match palace              
+frantic search                's best match is search the city                          with match search              
+rules lawyer                  's best match is mob rule                                 with match rule                
+razorfield ripper             's best match is persecute artist                         with match per                 
+cephalid looter               's best match is looter il-kor                            with match looter              
+murasa ranger                 's best match is pulse of murasa                          with match murasa              
+teferi's protege              's best match is oath of teferi                           with match teferi              
+thirst for meaning            's best match is sorin's thirst                           with match thirst              
+poetic ingenuity              's best match is ingenuity engine                         with match ingenuity           
+touch of moonglove            's best match is moonglove changeling                     with match moonglove           
+vat of rebirth                's best match is rebirth                                  with match rebirth             
+young wei recruits            's best match is forever young                            with match young               
+hour of eternity              's best match is eternity snare                           with match eternity            
+arcane artisan                's best match is artisan of forms                         with match artisan             
+urgoros, the empty one        's best match is one does not                             with match one                 
+ondu greathorn                's best match is thornscape familiar                      with match thorn               
+ebony charm                   's best match is charmed griffin                          with match charm               
+prismari command              's best match is galazeth prismari                        with match prismari            
+igneous cur                   's best match is curious cadaver                          with match cur                 
+colossal rattlewurm           's best match is wild colos                               with match colos               
+etherium sculptor             's best match is master of etherium                       with match etherium            
+goblin researcher             's best match is shambling goblin                         with match goblin              
+wildheart invoker             's best match is the crowd goes wild                      with match wild                
+ghost-lit drifter             's best match is drifter il-dal                           with match drifter             
+cyclone sire                  's best match is unpredictable cyclone                    with match cyclone             
+stupor                        's best match is portcullis                               with match por                 
+kavu primarch                 's best match is marchesa's emissary                      with match march               
+gruul guildmage               's best match is guildmages' forum                        with match guildmage           
+fieldmist borderpost          's best match is electrostatic field                      with match field               
+lutri, pauper otter           's best match is otterball antics                         with match otter               
+rod of spanking               's best match is king suleiman                            with match king                
+animating faerie // bring to life's best match is mayael the anima                         with match anima               
+tameshi, reality architect    's best match is architects of will                       with match architect           
+double down                   's best match is body double                              with match double              
+safehold sentry               's best match is sentry of the underworld                 with match sentry              
+edifice of authority          's best match is authority of the consuls                 with match authority           
+kamiz, obscura oculus         's best match is oculus                                   with match oculus              
+champion of arashin           's best match is soltari champion                         with match champion            
+inner struggle                's best match is struggle for skemfar                     with match struggle            
+falkenrath exterminator       's best match is exterminator magmarch                    with match exterminator        
+tasigur, the golden fang      's best match is fangren pathcutter                       with match fang                
+kharasha foothills            's best match is roar of the kha                          with match kha                 
+immortal phoenix              's best match is squee, the immortal                      with match immortal            
+druid's familiar              's best match is familiar's ruse                          with match familiar            
+twisted landscape             's best match is landscaper colos                         with match landscape           
+parting gust                  's best match is cathartic parting                        with match parting             
+thoughtcutter agent           's best match is perish the thought                       with match thought             
+doublecast                    's best match is body double                              with match double              
