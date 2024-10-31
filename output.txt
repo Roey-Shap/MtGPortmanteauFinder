@@ -1,50 +1,50 @@
-sandwurm convergence          's best match is convergence of dominion                  with match convergence         
-shock                         's best match is spellshock                               with match shock               
-palace jailer                 's best match is opal palace                              with match palace              
-frantic search                's best match is search the city                          with match search              
-rules lawyer                  's best match is mob rule                                 with match rule                
-razorfield ripper             's best match is persecute artist                         with match per                 
-cephalid looter               's best match is looter il-kor                            with match looter              
-murasa ranger                 's best match is pulse of murasa                          with match murasa              
-teferi's protege              's best match is oath of teferi                           with match teferi              
-thirst for meaning            's best match is sorin's thirst                           with match thirst              
-poetic ingenuity              's best match is ingenuity engine                         with match ingenuity           
-touch of moonglove            's best match is moonglove changeling                     with match moonglove           
-vat of rebirth                's best match is rebirth                                  with match rebirth             
-young wei recruits            's best match is forever young                            with match young               
-hour of eternity              's best match is eternity snare                           with match eternity            
-arcane artisan                's best match is artisan of forms                         with match artisan             
-urgoros, the empty one        's best match is one does not                             with match one                 
-ondu greathorn                's best match is thornscape familiar                      with match thorn               
-ebony charm                   's best match is charmed griffin                          with match charm               
-prismari command              's best match is galazeth prismari                        with match prismari            
-igneous cur                   's best match is curious cadaver                          with match cur                 
-colossal rattlewurm           's best match is wild colos                               with match colos               
-etherium sculptor             's best match is master of etherium                       with match etherium            
-goblin researcher             's best match is shambling goblin                         with match goblin              
-wildheart invoker             's best match is the crowd goes wild                      with match wild                
-ghost-lit drifter             's best match is drifter il-dal                           with match drifter             
-cyclone sire                  's best match is unpredictable cyclone                    with match cyclone             
-stupor                        's best match is portcullis                               with match por                 
-kavu primarch                 's best match is marchesa's emissary                      with match march               
-gruul guildmage               's best match is guildmages' forum                        with match guildmage           
-fieldmist borderpost          's best match is electrostatic field                      with match field               
-lutri, pauper otter           's best match is otterball antics                         with match otter               
-rod of spanking               's best match is king suleiman                            with match king                
-animating faerie // bring to life's best match is mayael the anima                         with match anima               
-tameshi, reality architect    's best match is architects of will                       with match architect           
-double down                   's best match is body double                              with match double              
-safehold sentry               's best match is sentry of the underworld                 with match sentry              
-edifice of authority          's best match is authority of the consuls                 with match authority           
-kamiz, obscura oculus         's best match is oculus                                   with match oculus              
-champion of arashin           's best match is soltari champion                         with match champion            
-inner struggle                's best match is struggle for skemfar                     with match struggle            
-falkenrath exterminator       's best match is exterminator magmarch                    with match exterminator        
-tasigur, the golden fang      's best match is fangren pathcutter                       with match fang                
-kharasha foothills            's best match is roar of the kha                          with match kha                 
-immortal phoenix              's best match is squee, the immortal                      with match immortal            
-druid's familiar              's best match is familiar's ruse                          with match familiar            
-twisted landscape             's best match is landscaper colos                         with match landscape           
-parting gust                  's best match is cathartic parting                        with match parting             
-thoughtcutter agent           's best match is perish the thought                       with match thought             
-doublecast                    's best match is body double                              with match double              
+true believer                           's best match is oketra the true                          with match true                
+depose // deploy                        's best match is deploy the gatewatch                     with match deploy              
+stronghold overseer                     's best match is ebon stronghold                          with match stronghold          
+infinite reflection                     's best match is reflection net                           with match reflection          
+shagrat, loot bearer                    's best match is bearer of silence                        with match bearer              
+strionic resonator                      's best match is No word                                  with match                     
+mistform warchief                       's best match is warchief giant                           with match warchief            
+morgue theft                            's best match is theft of dreams                          with match theft               
+titan of littjara                       's best match is littjara mirrorlake                      with match littjara            
+oltec archaeologists                    's best match is No word                                  with match                     
+sprite noble                            's best match is inspired sprite                          with match sprite              
+heartwood treefolk                      's best match is treefolk umbra                           with match treefolk            
+sky swallower                           's best match is ao, the dawn sky                         with match sky                 
+fevered visions                         's best match is visions of duplicity                     with match visions             
+serpentine kavu                         's best match is serpentine                               with match serpentine          
+phyrexian debaser                       's best match is old way phyrexian                        with match phyrexian           
+teferi, timeless voyager                's best match is voyager drake                            with match voyager             
+serenity                                's best match is song of serenity                         with match serenity            
+dark revenant                           's best match is revenant                                 with match revenant            
+scion of vitu-ghazi                     's best match is vitu-ghazi inspector                     with match vitu-ghazi          
+enduring innocence                      's best match is innocence kami                           with match innocence           
+notion rain                             's best match is rain of thorns                           with match rain                
+guildpact greenwalker                   's best match is seal of the guildpact                    with match guildpact           
+noble templar                           's best match is templar knight                           with match templar             
+vex                                     's best match is No word                                  with match                     
+kor haven                               's best match is haven of the spirit dragon               with match haven               
+pox                                     's best match is No word                                  with match                     
+crimson fleet commodore                 's best match is commodore guff                           with match commodore           
+ethereal armor                          's best match is armor sliver                             with match armor               
+cryptic caves                           's best match is caves of chaos adventurer                with match caves               
+unfortunate accident                    's best match is No word                                  with match                     
+workshop warchief                       's best match is urza's workshop                          with match workshop            
+winterflame                             's best match is No word                                  with match                     
+ancient grudge                          's best match is nyxbloom ancient                         with match ancient             
+masticore                               's best match is lesser masticore                         with match masticore           
+merfolk traders                         's best match is sandbar merfolk                          with match merfolk             
+decorated champion                      's best match is champion of the hareish                  with match champion            
+keen duelist                            's best match is duelist of deep faith                    with match duelist             
+kyscu drake                             's best match is drake familiar                           with match drake               
+suleiman's legacy                       's best match is legacy weapon                            with match legacy              
+twinshot sniper                         's best match is No word                                  with match                     
+lone wolf                               's best match is wolf pack                                with match wolf                
+keeper of secrets                       's best match is secrets of the dead                      with match secrets             
+immovable rod                           's best match is rod of absorption                        with match rod                 
+benalish commander                      's best match is commander eesha                          with match commander           
+sculpted perfection                     's best match is No word                                  with match                     
+steelgaze griffin                       's best match is griffin canyon                           with match griffin             
+military discipline                     's best match is No word                                  with match                     
+double down                             's best match is osgood, operation double                 with match double              
+king macar, the gold-cursed             's best match is esquire of the king                      with match king                

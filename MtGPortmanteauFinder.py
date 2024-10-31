@@ -10,13 +10,34 @@ import csv
 def place_in_array(element, i, arr):
     return arr[0:i] + [element] + arr[i:-1]
 
-def check_portmanteau_prefix(base_word, match_word):
+def check_portmanteau_prefix(name1, name2):
     for i in range(min(len(base_word), len(match_word)), -1, -1):
-        cur_slice = base_word[-(i+1):]
-        if match_word.startswith(cur_slice):
-            return cur_slice
+    cur_slice = base_word[-(i+1):]
+    if match_word.startswith(cur_slice):
+        return cur_slice
 
-    return ""
+
+def check_portmanteau_prefix_whole_word(name1, name2):
+    split1 = name1.split()
+    split2 = name2.split()
+    largest_matching_subset = None
+    for i in range(min(len(split1), len(split2))-1, -1, -1):
+        slice1 = split1[-(i+1):]
+        last_matching_index = -1
+        found_mismatching_word_in_name2 = False
+        for j in range(i+1):
+            if slice1[-(j+1)] != split2[j]:
+                found_mismatching_word_in_name2 = True
+                break
+            else:
+                last_matching_index = j
+        if not found_mismatching_word_in_name2:
+            largest_matching_subset = last_matching_index
+
+    if largest_matching_subset is not None:
+        return " ".join(split1[-(largest_matching_subset+1):])
+    else:
+        return ""
 
 def get_best_portmanteau_match_for_name(suggested_card, card_names):
     # top_N_candidates: int = 1
