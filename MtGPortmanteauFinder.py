@@ -1,21 +1,20 @@
 import csv
+import time
+import cython
 
 # Notes:
-# - Aside from just the largest portmanteau, it probably makes sense to include the largest *non-trival one*. Some names fit perfectly into others.
-# - It's probably most coherent in terms of joke names if we limit portmantea-manship (?? Rolling with it) to full words matches.
-#   ... that is, "Thing One" matches with "Never Give Up" to make "Thing Onever Give Up"... Not really the initial intention nor is it really effective.
-# - Sort them by largest match afterwords, then write them into a file! 
 
 
 def place_in_array(element, i, arr):
     return arr[0:i] + [element] + arr[i:-1]
 
 def check_portmanteau_prefix(name1, name2):
-    for i in range(min(len(base_word), len(match_word)), -1, -1):
-    cur_slice = base_word[-(i+1):]
-    if match_word.startswith(cur_slice):
-        return cur_slice
+    for i in range(min(len(name1), len(name2)), -1, -1):
+        cur_slice = name1[-(i+1):]
+        if name2.startswith(cur_slice):
+            return cur_slice
 
+    return ""
 
 def check_portmanteau_prefix_whole_word(name1, name2):
     split1 = name1.split()
@@ -26,7 +25,7 @@ def check_portmanteau_prefix_whole_word(name1, name2):
         last_matching_index = -1
         found_mismatching_word_in_name2 = False
         for j in range(i+1):
-            if slice1[-(j+1)] != split2[j]:
+            if slice1[-(j+1)] != split2[i-j]:
                 found_mismatching_word_in_name2 = True
                 break
             else:
@@ -39,17 +38,19 @@ def check_portmanteau_prefix_whole_word(name1, name2):
     else:
         return ""
 
-def get_best_portmanteau_match_for_name(suggested_card, card_names):
+def get_best_portmanteau_match_for_name(suggested_card, card_names, whole_word_mode):
     # top_N_candidates: int = 1
     best_candidate_word = "No word"
     best_candidate_match = ""
-    # best_candidates: list[tuple(str, str)] = [("None", "") for i in range(top_N_candidates)]
+    portmanteau_check_function = check_portmanteau_prefix_whole_word if whole_word_mode else check_portmanteau_prefix
+
     for fuse_candidate in card_names:
-        if fuse_candidate == suggested_card:
+        # Remove trivial solutions
+        if fuse_candidate in suggested_card or suggested_card in fuse_candidate:
             continue
 
-        fuse_candidate_prefix_slice = check_portmanteau_prefix(suggested_card, fuse_candidate)
-        base_word_prefix_slice = check_portmanteau_prefix(fuse_candidate, suggested_card)
+        fuse_candidate_prefix_slice = portmanteau_check_function(suggested_card, fuse_candidate)
+        base_word_prefix_slice = portmanteau_check_function(fuse_candidate, suggested_card)
 
         best_successful_portmanteau_match = max(fuse_candidate_prefix_slice, base_word_prefix_slice, key=len)
 
@@ -70,18 +71,20 @@ def get_best_portmanteau_match_for_name(suggested_card, card_names):
     return (best_candidate_word, best_candidate_match)
 
 def main():
+    FILE_ENCODING = "Latin1"
+    
     card_names: set[str] = set()
-    with open('cards.csv', 'r', encoding="Latin1") as cards_csv:
-        # raw_json_string = "".join(cards_json.readlines())
-        # cards_data = json.load(cards_json)
+    with open('cards.csv', 'r', encoding=FILE_ENCODING) as cards_csv:
         csv_reader = csv.DictReader(cards_csv)
         try:
             i = 1
             for row in csv_reader:
-                new_name = row["name"].lower()
-                if new_name not in card_names:
-                   card_names.add(new_name)
-                i += 1
+                new_names = row["name"].lower().split("//")
+                for new_name in new_names:
+                    new_name = new_name.strip()
+                    if len(new_name) > 0 and new_name not in card_names:
+                        card_names.add(new_name)
+                        i += 1
         except Exception as e:
             print(f"There was an issue reading the name of row number {i}, stopping...")
             print(e)
@@ -98,21 +101,35 @@ def main():
     #     if not found_card_in_database:
     #         print(f"'{suggested_card}' isn't in the card database!")
 
-    test_card = "rise of the dark realms"
-    print(f"Best match for {test_card} is {get_best_portmanteau_match_for_name(test_card, card_names)}")
+    test_card = "birds of paradise avatar"
+    print(f"Best match for {test_card} is {get_best_portmanteau_match_for_name(test_card, card_names, False)}")
+
+    print("Starting timer...")
+    start_time = time.time()
 
     portmanteau_matches: dict[str, tuple(str, str)] = {}
+    portmanteau_matches_whole_word: dict[str, tuple(str, str)] = {}
     for i, name in enumerate(card_names):
-        if i < 50:
-            portmanteau_matches[name] = get_best_portmanteau_match_for_name(name, card_names)
-            i += 1
-        else:
-            break
-
+        portmanteau_matches[name]               = get_best_portmanteau_match_for_name(name, card_names, False)
+        portmanteau_matches_whole_word[name]    = get_best_portmanteau_match_for_name(name, card_names, True)
+        if i % 100 == 0:
+            print(f"Index {i + 1} at {round(time.time() - start_time)} seconds")
+    
     # print(f"\n\nTop {top_N_candidates} matches for {suggested_card}:")
-    with open("./output.txt", "w") as output_file:
-        for name in portmanteau_matches:
-            matched_card, match = portmanteau_matches[name]
+
+    ordered_portmanteau_matches = [(name, best_candidate_name, candidate_match) for name, (best_candidate_name, candidate_match) in portmanteau_matches.items()]
+    ordered_portmanteau_whole_word_matches = [(name, best_candidate_name, candidate_match) for name, (best_candidate_name, candidate_match) in portmanteau_matches_whole_word.items()]
+
+    ordered_portmanteau_matches.sort(key=lambda tuple: len(tuple[2]), reverse=True)
+    ordered_portmanteau_whole_word_matches.sort(key=lambda tuple: len(tuple[2]), reverse=True)
+    # print(ordered_portmanteau_matches)
+    
+    with open("./output_anything_goes.txt", "w", encoding=FILE_ENCODING) as output_file:
+        for name, matched_card, match in ordered_portmanteau_matches:
+            print("{: <40}'s best match is ".format(name) + "{: <40}".format(matched_card) + " with match {: <20}".format(match), file=output_file)
+
+    with open("./output_whole_word.txt", "w", encoding=FILE_ENCODING) as output_file:
+        for name, matched_card, match in ordered_portmanteau_whole_word_matches:
             print("{: <40}'s best match is ".format(name) + "{: <40}".format(matched_card) + " with match {: <20}".format(match), file=output_file)
 
 
