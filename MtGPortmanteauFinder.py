@@ -3,7 +3,10 @@ import time
 import cython
 
 # Notes:
-
+# Considered also disqualifing any matches that are in the list of cards, but whatver it's a consequence.
+# Statistics you could track for each card:
+#   How many times has it been used in a match?
+#   All of the matches of the top size it found / Number of times it matched of that size
 
 def place_in_array(element, i, arr):
     return arr[0:i] + [element] + arr[i:-1]
@@ -38,10 +41,10 @@ def check_portmanteau_prefix_whole_word(name1, name2):
     else:
         return ""
 
-def get_best_portmanteau_match_for_name(suggested_card, card_names, whole_word_mode):
-    # top_N_candidates: int = 1
+def get_best_portmanteau_match_for_name(suggested_card, card_names, whole_word_mode, get_top_N_match_sizes=1, num_matches_per_size=1):
     best_candidate_word = "No word"
     best_candidate_match = ""
+    # ranked_matches: dict[str, tuple[]]
     portmanteau_check_function = check_portmanteau_prefix_whole_word if whole_word_mode else check_portmanteau_prefix
 
     for fuse_candidate in card_names:
@@ -50,7 +53,13 @@ def get_best_portmanteau_match_for_name(suggested_card, card_names, whole_word_m
             continue
 
         fuse_candidate_prefix_slice = portmanteau_check_function(suggested_card, fuse_candidate)
+        if fuse_candidate_prefix_slice in card_names:
+            fuse_candidate_prefix_slice = ""
+
         base_word_prefix_slice = portmanteau_check_function(fuse_candidate, suggested_card)
+        if base_word_prefix_slice in card_names:
+            base_word_prefix_slice = ""
+
 
         best_successful_portmanteau_match = max(fuse_candidate_prefix_slice, base_word_prefix_slice, key=len)
 
@@ -91,18 +100,17 @@ def main():
 
     print(f"Number of cards loaded: {len(card_names)}")
     
-    # suggested_card: str = ""
-    # tried_once = False
-    # found_card_in_database = False
-    # while (not tried_once) or (not found_card_in_database):
-    #     tried_once = True
-    #     suggested_card = input("Input a card!\n").lower()
-    #     found_card_in_database = suggested_card in card_names
-    #     if not found_card_in_database:
-    #         print(f"'{suggested_card}' isn't in the card database!")
+    suggested_card: str = ""
+    tried_once = False
+    found_card_in_database = False
+    while (not tried_once) or (not found_card_in_database):
+        tried_once = True
+        suggested_card = input("Input a card!\n").lower()
+        found_card_in_database = suggested_card in card_names
+        if not found_card_in_database:
+            print(f"'{suggested_card}' isn't in the card database!")
 
-    test_card = "birds of paradise avatar"
-    print(f"Best match for {test_card} is {get_best_portmanteau_match_for_name(test_card, card_names, False)}")
+    print(f"Best match for {suggested_card} is {get_best_portmanteau_match_for_name(suggested_card, card_names, False)}") # , get_top_N_match_sizes=5, num_matches_per_size=5
 
     print("Starting timer...")
     start_time = time.time()
